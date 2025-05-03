@@ -18,5 +18,44 @@
 
     <dependencies>
 
+        <!-- Selenium WebDriver library for browser automation -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.31.0</version>
+        </dependency>
+
+        <!-- Cucumber library for writing feature files in Gherkin syntax (used in Java) -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.19.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Cucumber TestNG integration for running Cucumber tests within the TestNG framework -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>7.19.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- TestNG library for organizing and managing test cases -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
+
+
+
+
+
+
+
+
     </dependencies>
 </project>
