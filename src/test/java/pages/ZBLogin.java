@@ -7,22 +7,18 @@ import utilities.GWD;
 
 public class ZBLogin {
 
+    @FindBy(id = "user_login")
+    public WebElement username;
+    @FindBy(id = "user_password")
+    public WebElement password;
+    @FindBy(css = "[name='submit']")
+    public WebElement signInButton;
+    @FindBy(css = "[class='icon-user']")
+    public WebElement userIcon;
+
     public ZBLogin() {
-        PageFactory.initElements(GWD.getDriver(),this);
+        PageFactory.initElements(GWD.getDriver(), this);
     }
-
-    @FindBy(id=)
-    public WebElement username;
-
-    @FindBy(id=)
-    public WebElement username;
-
-    @FindBy(id=)
-    public WebElement username;
-
-    @FindBy(id=)
-    public WebElement username;
-
 
 
 }
