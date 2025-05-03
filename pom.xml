@@ -49,13 +49,12 @@
             <scope>test</scope>
         </dependency>
 
-
-
-
-
-
-
-
+        <!-- ExtentReports adapter for Cucumber 7 to generate rich test reports -->
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.14.0</version>
+        </dependency>
 
     </dependencies>
 </project>
