@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 
-public class ZBLogin {
+public class ZBLogin extends Parent{
 
     @FindBy(id = "user_login")
     public WebElement username;
@@ -19,6 +19,4 @@ public class ZBLogin {
     public ZBLogin() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
-
-
 }
