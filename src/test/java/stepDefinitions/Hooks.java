@@ -5,7 +5,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import utilities.GWD;
+import utilities.DriverManager;
 
 public class Hooks {
     @Before
@@ -16,15 +16,17 @@ public class Hooks {
     @After
     public void after(Scenario scenario) {
 
-//        ExcelUtility.writeToExcel("src/test/java/apachePOI/resource/_ScenarioResults.xlsx",
-//                scenario,GWD.getThreadBrowserName());
+        ExcelUtility.writeToExcel("src/test/java/apachePOI/ScenarioResults.xlsx",
+                scenario, DriverManager.getThreadBrowserName());
 
         if (scenario.isFailed()) {
-            TakesScreenshot screenshot = ((TakesScreenshot) GWD.getDriver());
+            TakesScreenshot screenshot = ((TakesScreenshot) DriverManager.getDriver());
             byte[] stateInMemory = screenshot.getScreenshotAs(OutputType.BYTES);
             scenario.attach(stateInMemory, "image/png", "screenshot name");
         }
+
         System.out.println("The scenario finished.");
-        GWD.quitDriver();
+
+        DriverManager.quitDriver();
     }
 }
