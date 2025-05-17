@@ -46,4 +46,20 @@ public class LoginSteps {
         Assert.assertTrue(login.userIcon.isDisplayed(), "User icon is not displayed, login may have failed.");
     }
 
+    @And("Retrieve and enter username and password from Excel file {string}")
+    public void retrieveAndEnterUsernameAndPasswordFromExcelFileZeroBankDataXlsx(String fileName) throws IOException {
+
+        String path = "src/test/java/apachePOI/" + fileName;
+
+        FileInputStream fileInputStream = new FileInputStream(path);
+        Workbook workbook = WorkbookFactory.create(fileInputStream);
+        Sheet sheet = workbook.getSheet("Sheet1");
+
+        String username = String.valueOf(sheet.getRow(4).getCell(5));
+        String password = String.valueOf(sheet.getRow(4).getCell(6));
+
+        login.mySendKeys(login.username, username);
+        login.mySendKeys(login.password, password);
+    }
+
 }
