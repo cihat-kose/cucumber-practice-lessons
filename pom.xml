@@ -82,20 +82,34 @@
             <version>5.4.0</version>
         </dependency>
 
-<!--        &lt;!&ndash; SLF4J API for logging (requires an implementation) &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-api</artifactId>-->
-<!--            <version>2.0.16</version>-->
-<!--        </dependency>-->
+        <!-- Optional: JNA support required by some ByteBuddy classes during classpath scanning -->
+        <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna</artifactId>
+            <version>5.14.0</version>
+        </dependency>
 
-<!--        &lt;!&ndash; SLF4J Simple Logger for basic console logging during testing &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-simple</artifactId>-->
-<!--            <version>2.0.16</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+        <!-- Optional: Jackson Databind used by some Log4j JSON/Jackson integrations -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.18.0</version>
+        </dependency>
+
+        <!--        &lt;!&ndash; SLF4J API for logging (requires an implementation) &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.slf4j</groupId>-->
+        <!--            <artifactId>slf4j-api</artifactId>-->
+        <!--            <version>2.0.16</version>-->
+        <!--        </dependency>-->
+
+        <!--        &lt;!&ndash; SLF4J Simple Logger for basic console logging during testing &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.slf4j</groupId>-->
+        <!--            <artifactId>slf4j-simple</artifactId>-->
+        <!--            <version>2.0.16</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
 
         <!-- Apache Commons IO for file utilities like FileUtils -->
         <dependency>
