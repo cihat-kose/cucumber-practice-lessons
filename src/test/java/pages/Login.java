@@ -12,7 +12,7 @@ public class Login extends Parent{
         PageFactory.initElements(DriverManager.getDriver(), this);
     }
 
-    @FindBy(id = "user_login")
+    @FindBy(xpath = "//input[@id='user_login']")
     public WebElement username;
     @FindBy(id = "user_password")
     public WebElement password;
