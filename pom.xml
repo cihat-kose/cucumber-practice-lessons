@@ -48,6 +48,40 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- ExtentReports adapter for Cucumber 7 to generate rich test reports -->
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.14.0</version>
+        </dependency>
+
+        <!-- Log4j API and Core for logging functionality (optional, remove if no logging is needed) -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.23.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.23.1</version>
+        </dependency>
+
+        <!-- Apache POI for reading and writing Excel files -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.4.0</version>
+        </dependency>
+
+        <!-- Apache POI OOXML for handling Excel files in .xlsx format -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.4.0</version>
+        </dependency>
+
         <!-- Optional: JNA support required by some ByteBuddy classes during classpath scanning -->
         <dependency>
             <groupId>net.java.dev.jna</groupId>
@@ -59,13 +93,6 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.18.0</version>
-        </dependency>
-
-        <!-- Apache Commons IO for file utilities like FileUtils -->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
             <version>2.18.0</version>
         </dependency>
 
@@ -83,5 +110,12 @@
         <!--            <version>2.0.16</version>-->
         <!--            <scope>test</scope>-->
         <!--        </dependency>-->
+
+        <!-- Apache Commons IO for file utilities like FileUtils -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.18.0</version>
+        </dependency>
     </dependencies>
 </project>
