@@ -11,6 +11,7 @@
 
   Feature: Login Functionality
 
+    @Smoke
     Scenario: Login with valid username and password
 
       Given Navigate to login page

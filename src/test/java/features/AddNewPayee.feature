@@ -23,6 +23,7 @@
       Then  Verify thar user is redirected to account summary
       And   Verify that user icon is displayed
 
+    @Regression
     Scenario Outline: Add a New Payee with Different Data Set
 
       When Click on the element in OnlineBanking

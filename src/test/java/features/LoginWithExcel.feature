@@ -13,6 +13,7 @@
 
   Feature: Login Functionality with Excel Data
 
+    @Smoke
     Scenario: Login using credentials from Excel with Apache POI
 
       Given Navigate to login page

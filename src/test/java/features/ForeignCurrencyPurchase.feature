@@ -19,6 +19,7 @@
       Then  Verify thar user is redirected to account summary
       And   Verify that user icon is displayed
 
+    @Regression
     Scenario Outline: Purchase foreign currency and convert to U.S. dollars
 
       When User clicks on the Online Banking section
