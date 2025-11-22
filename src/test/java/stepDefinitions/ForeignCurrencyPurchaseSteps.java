@@ -1,14 +1,17 @@
 package stepDefinitions;
 
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.OnlineBanking;
+import utilities.DriverManager;
 
-public class ForeignCurrencyPurchase {
+import java.time.Duration;
+
+public class ForeignCurrencyPurchaseSteps {
 
     OnlineBanking onlineBanking = new OnlineBanking();
 
@@ -29,7 +32,8 @@ public class ForeignCurrencyPurchase {
 
     @And("User selects currency as {string}")
     public void userSelectsCurrencyAs(String currency) {
-        onlineBanking.wait.until(ExpectedConditions.elementToBeClickable(onlineBanking.currencySelect));
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(onlineBanking.currencySelect));
         Select select = new Select(onlineBanking.currencySelect);
         select.selectByValue(currency);
     }
@@ -52,5 +56,10 @@ public class ForeignCurrencyPurchase {
     @And("User clicks on Purchase")
     public void userClicksOnPurchase() {
         onlineBanking.myClick(onlineBanking.purchaseButton);
+    }
+
+    @Then("Verify that the transaction was successful")
+    public void verifyThatTheTransactionWasSuccessful() {
+        onlineBanking.verifyContainsText(onlineBanking.successMessage, "success");
     }
 }

@@ -14,6 +14,7 @@ import utilities.DriverManager;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+
 public class LoginSteps {
     Login login = new Login();
 
@@ -34,19 +35,20 @@ public class LoginSteps {
         DriverManager.getDriver().navigate().back();
     }
 
-    @Then("Verify thar user is redirected to account summary")
-    public void verifyTharUserIsRedirectedToAccountSummary() {
+    @Then("Verify that user is redirected to account summary page")
+    public void verifyThatUserIsRedirectedToAccountSummaryPage() {
         String expectedUrl = "http://zero.webappsecurity.com/index.html";
         Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), expectedUrl, "User was not redirected to account summary page.");
     }
 
     @And("Verify that user icon is displayed")
     public void verifyThatUserIconIsDisplayed() {
-        Assert.assertTrue(login.userIcon.isDisplayed(), "User icon is not displayed");
+        Assert.assertTrue(login.userIcon.isDisplayed(), "User icon is not displayed, login may have failed.");
     }
 
     @And("Retrieve and enter username and password from Excel file {string}")
-    public void retrieveAndEnterUsernameAndPasswordFromExcelFile(String fileName) throws IOException {
+    public void retrieveAndEnterUsernameAndPasswordFromExcelFileZeroBankDataXlsx(String fileName) throws IOException {
+
         String path = "src/test/java/apachePOI/" + fileName;
 
         FileInputStream fileInputStream = new FileInputStream(path);
@@ -59,4 +61,5 @@ public class LoginSteps {
         login.mySendKeys(login.username, username);
         login.mySendKeys(login.password, password);
     }
+
 }

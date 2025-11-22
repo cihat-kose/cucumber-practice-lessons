@@ -9,16 +9,17 @@
   #➢ Buy from 3 different currencies.
   #➢ Verify that the transaction has been completed successfully.
 
-  Feature: Foreign Currency Functionality
+  Feature: Foreign Currency Purchase Functionality
 
     Background:
 
       Given Navigate to login page
       And   Enter username that as "username" and password that as "password"
       When  Click Sign In button
-      Then  Verify thar user is redirected to account summary
+      Then  Verify that user is redirected to account summary page
       And   Verify that user icon is displayed
 
+    @Regression
     Scenario Outline: Purchase foreign currency and convert to U.S. dollars
 
       When User clicks on the Online Banking section
@@ -29,7 +30,7 @@
       And  User clicks on U.S. dollar checkbox
       And  User clicks on Calculate Costs button
       And  User clicks on Purchase
-      Then  Verify that the transaction was successful
+      Then Verify that the transaction was successful
 
       Examples:
         | currency | amount |

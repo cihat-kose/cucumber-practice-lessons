@@ -11,11 +11,11 @@
 
   Feature: Login Functionality
 
+    @Smoke
     Scenario: Login with valid username and password
 
       Given Navigate to login page
       And   Enter username that as "username" and password that as "password"
       When  Click Sign In button
-      Then  Verify thar user is redirected to account summary
+      Then  Verify that user is redirected to account summary page
       And   Verify that user icon is displayed
-

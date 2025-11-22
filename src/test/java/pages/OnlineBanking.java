@@ -5,11 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.DriverManager;
 
-public class OnlineBanking extends Parent{
-
-    public OnlineBanking() {
-        PageFactory.initElements(DriverManager.getDriver(), this);
-    }
+public class OnlineBanking extends Parent {
 
     @FindBy(id = "onlineBankingMenu")
     public WebElement onlineBanking;
@@ -41,6 +37,10 @@ public class OnlineBanking extends Parent{
     public WebElement payeeDetails;
     @FindBy(id = "add_new_payee")
     public WebElement addButton;
+
+    public OnlineBanking() {
+        PageFactory.initElements(DriverManager.getDriver(), this);
+    }
 
     public WebElement getWebElement(String stringElement) {
         switch (stringElement) {

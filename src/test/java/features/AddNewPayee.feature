@@ -20,17 +20,18 @@
       Given Navigate to login page
       And   Enter username that as "username" and password that as "password"
       When  Click Sign In button
-      Then  Verify thar user is redirected to account summary
+      Then  Verify that user is redirected to account summary page
       And   Verify that user icon is displayed
 
-    Scenario Outline: Add a New Payee with Different Data Set
+    @Regression
+    Scenario Outline: Add a New Payee with Different Data Sets
 
       When Click on the element in OnlineBanking
         | onlineBanking |
         | payBills      |
         | addNewPayee   |
 
-      And User sending name, address, account and details in OnlineBanking
+      And User sending name,address,account and details in OnlineBanking
         | payeeName    | <name>    |
         | payeeAddress | <address> |
         | payeeAccount | <account> |

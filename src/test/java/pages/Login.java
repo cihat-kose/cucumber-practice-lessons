@@ -5,14 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.DriverManager;
 
+public class Login extends Parent {
 
-public class Login extends Parent{
-
-    public Login() {
-        PageFactory.initElements(DriverManager.getDriver(), this);
-    }
-
-    @FindBy(xpath = "//input[@id='user_login']")
+    @FindBy(id = "user_login")
     public WebElement username;
     @FindBy(id = "user_password")
     public WebElement password;
@@ -20,4 +15,8 @@ public class Login extends Parent{
     public WebElement signInButton;
     @FindBy(css = "[class='icon-user']")
     public WebElement userIcon;
+
+    public Login() {
+        PageFactory.initElements(DriverManager.getDriver(), this);
+    }
 }
